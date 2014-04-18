@@ -6,6 +6,7 @@ from PyQt4 import QtGui
 
 from main_window import Ui_MainWindow
 from ..parser.grammar import Grammar
+from ..parser.exceptions import *
 
 
 class MainWindow(QtGui.QMainWindow):
@@ -19,6 +20,7 @@ class MainWindow(QtGui.QMainWindow):
         self.file_name = ''
 
         self.ui.parseGrammarButton.clicked.connect(self.on_parse_grammar_click)
+        self.ui.transformGrammarButton.clicked.connect(self.on_transform_grammar_click)
         self.ui.actionNew.triggered.connect(self.on_new_click)
         self.ui.actionLoad.triggered.connect(self.on_load_click)
         self.ui.actionSave.triggered.connect(self.on_save_click)
@@ -29,14 +31,28 @@ class MainWindow(QtGui.QMainWindow):
 
     def on_parse_grammar_click(self):
         self.grammar = Grammar()
-        self.grammar.parse_from_text(str(self.ui.grammarTextEdit.toPlainText()))
-        self.ui.grammarTextEdit.setText(self.grammar.to_plain_text())
+        try:
+            self.grammar.parse_from_text(str(self.ui.grammarTextEdit.toPlainText()))
+            self.ui.grammarTextEdit.setText(self.grammar.to_plain_text())
+            self.ui.statusLabel.setText("Parsing completed")
+        except GrammarException as e:
+            self.ui.statusLabel.setText(e.get_error_msg())
+
+    def on_transform_grammar_click(self):
+        try:
+            self.grammar.parse_from_text(str(self.ui.grammarTextEdit.toPlainText()))
+            self.grammar.transform_grammar()
+            self.ui.grammarTextEdit.setText(self.grammar.to_plain_text())
+            self.ui.statusLabel.setText("Transformation completed")
+        except GrammarException as e:
+            self.ui.statusLabel.setText(e.get_error_msg())
 
     def on_new_click(self):
         self.grammar = Grammar()
         self.file_name = ''
         self.ui.grammarTextEdit.clear()
         self.ui.actionSave.setEnabled(False)
+        self.ui.statusLabel.clear()
 
     def on_load_click(self):
         file_name = QtGui.QFileDialog.getOpenFileName(self, 'Open file', filter="Grammar files (*.grm)")
@@ -44,9 +60,10 @@ class MainWindow(QtGui.QMainWindow):
             f = open(file_name, 'r')
             self.ui.grammarTextEdit.setText(f.read())
             f.close()
-
+            self.grammar = Grammar()
             self.file_name = file_name
             self.ui.actionSave.setEnabled(True)
+            self.ui.statusLabel.clear()
 
     def on_save_click(self):
         f = open(self.file_name, 'w')

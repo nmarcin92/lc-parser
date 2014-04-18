@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'main_window.ui'
+# Form implementation generated from reading ui file 'lcp\gui\ui\main_window.ui'
 #
-# Created: Thu Apr 17 21:03:51 2014
+# Created: Fri Apr 18 18:43:05 2014
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,11 +26,12 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(800, 483)
+        MainWindow.resize(800, 523)
+        MainWindow.setStyleSheet(_fromUtf8("color: rgb(0, 0, 0);"))
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.grammarTextEdit = QtGui.QTextEdit(self.centralwidget)
-        self.grammarTextEdit.setGeometry(QtCore.QRect(10, 30, 301, 351))
+        self.grammarTextEdit.setGeometry(QtCore.QRect(10, 30, 311, 351))
         self.grammarTextEdit.setObjectName(_fromUtf8("grammarTextEdit"))
         self.parserTableWidget = QtGui.QTableWidget(self.centralwidget)
         self.parserTableWidget.setGeometry(QtCore.QRect(330, 30, 451, 381))
@@ -50,7 +51,7 @@ class Ui_MainWindow(object):
         self.transformGrammarButton.setGeometry(QtCore.QRect(170, 390, 141, 23))
         self.transformGrammarButton.setObjectName(_fromUtf8("transformGrammarButton"))
         self.generateTableButton = QtGui.QPushButton(self.centralwidget)
-        self.generateTableButton.setGeometry(QtCore.QRect(10, 420, 301, 23))
+        self.generateTableButton.setGeometry(QtCore.QRect(10, 420, 301, 31))
         self.generateTableButton.setObjectName(_fromUtf8("generateTableButton"))
         self.checkWordButton = QtGui.QPushButton(self.centralwidget)
         self.checkWordButton.setGeometry(QtCore.QRect(710, 420, 75, 23))
@@ -61,6 +62,13 @@ class Ui_MainWindow(object):
         self.parseGrammarButton = QtGui.QPushButton(self.centralwidget)
         self.parseGrammarButton.setGeometry(QtCore.QRect(10, 390, 141, 23))
         self.parseGrammarButton.setObjectName(_fromUtf8("parseGrammarButton"))
+        self.statusLabel = QtGui.QLabel(self.centralwidget)
+        self.statusLabel.setGeometry(QtCore.QRect(50, 460, 391, 21))
+        self.statusLabel.setText(_fromUtf8(""))
+        self.statusLabel.setObjectName(_fromUtf8("statusLabel"))
+        self.label = QtGui.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(10, 460, 46, 21))
+        self.label.setObjectName(_fromUtf8("label"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
@@ -76,6 +84,7 @@ class Ui_MainWindow(object):
         self.actionLoad = QtGui.QAction(MainWindow)
         self.actionLoad.setObjectName(_fromUtf8("actionLoad"))
         self.actionSave = QtGui.QAction(MainWindow)
+        self.actionSave.setEnabled(True)
         self.actionSave.setObjectName(_fromUtf8("actionSave"))
         self.actionSave_as = QtGui.QAction(MainWindow)
         self.actionSave_as.setObjectName(_fromUtf8("actionSave_as"))
@@ -106,6 +115,7 @@ class Ui_MainWindow(object):
         self.checkWordButton.setText(_translate("MainWindow", "Check", None))
         self.enterWordLabel.setText(_translate("MainWindow", "Enter word:", None))
         self.parseGrammarButton.setText(_translate("MainWindow", "Parse grammar", None))
+        self.label.setText(_translate("MainWindow", "Status:", None))
         self.menuFile.setTitle(_translate("MainWindow", "File", None))
         self.actionNew.setText(_translate("MainWindow", "New", None))
         self.actionLoad.setText(_translate("MainWindow", "Load", None))
