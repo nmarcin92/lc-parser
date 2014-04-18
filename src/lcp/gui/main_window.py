@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'main_window.ui'
 #
-# Created: Thu Apr 17 19:22:31 2014
+# Created: Thu Apr 17 21:03:51 2014
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,14 +26,14 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(800, 462)
+        MainWindow.resize(800, 483)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.grammarTextEdit = QtGui.QTextEdit(self.centralwidget)
         self.grammarTextEdit.setGeometry(QtCore.QRect(10, 30, 301, 351))
         self.grammarTextEdit.setObjectName(_fromUtf8("grammarTextEdit"))
         self.parserTableWidget = QtGui.QTableWidget(self.centralwidget)
-        self.parserTableWidget.setGeometry(QtCore.QRect(330, 30, 451, 351))
+        self.parserTableWidget.setGeometry(QtCore.QRect(330, 30, 451, 381))
         self.parserTableWidget.setObjectName(_fromUtf8("parserTableWidget"))
         self.parserTableWidget.setColumnCount(0)
         self.parserTableWidget.setRowCount(0)
@@ -44,20 +44,23 @@ class Ui_MainWindow(object):
         self.parserTableLabel.setGeometry(QtCore.QRect(330, 10, 81, 16))
         self.parserTableLabel.setObjectName(_fromUtf8("parserTableLabel"))
         self.wordLineEdit = QtGui.QLineEdit(self.centralwidget)
-        self.wordLineEdit.setGeometry(QtCore.QRect(410, 390, 281, 20))
+        self.wordLineEdit.setGeometry(QtCore.QRect(390, 420, 301, 20))
         self.wordLineEdit.setObjectName(_fromUtf8("wordLineEdit"))
         self.transformGrammarButton = QtGui.QPushButton(self.centralwidget)
-        self.transformGrammarButton.setGeometry(QtCore.QRect(10, 390, 141, 23))
+        self.transformGrammarButton.setGeometry(QtCore.QRect(170, 390, 141, 23))
         self.transformGrammarButton.setObjectName(_fromUtf8("transformGrammarButton"))
         self.generateTableButton = QtGui.QPushButton(self.centralwidget)
-        self.generateTableButton.setGeometry(QtCore.QRect(160, 390, 151, 23))
+        self.generateTableButton.setGeometry(QtCore.QRect(10, 420, 301, 23))
         self.generateTableButton.setObjectName(_fromUtf8("generateTableButton"))
         self.checkWordButton = QtGui.QPushButton(self.centralwidget)
-        self.checkWordButton.setGeometry(QtCore.QRect(710, 390, 75, 23))
+        self.checkWordButton.setGeometry(QtCore.QRect(710, 420, 75, 23))
         self.checkWordButton.setObjectName(_fromUtf8("checkWordButton"))
         self.enterWordLabel = QtGui.QLabel(self.centralwidget)
-        self.enterWordLabel.setGeometry(QtCore.QRect(340, 390, 61, 16))
+        self.enterWordLabel.setGeometry(QtCore.QRect(330, 420, 61, 16))
         self.enterWordLabel.setObjectName(_fromUtf8("enterWordLabel"))
+        self.parseGrammarButton = QtGui.QPushButton(self.centralwidget)
+        self.parseGrammarButton.setGeometry(QtCore.QRect(10, 390, 141, 23))
+        self.parseGrammarButton.setObjectName(_fromUtf8("parseGrammarButton"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
@@ -102,6 +105,7 @@ class Ui_MainWindow(object):
         self.generateTableButton.setText(_translate("MainWindow", "Genarate table", None))
         self.checkWordButton.setText(_translate("MainWindow", "Check", None))
         self.enterWordLabel.setText(_translate("MainWindow", "Enter word:", None))
+        self.parseGrammarButton.setText(_translate("MainWindow", "Parse grammar", None))
         self.menuFile.setTitle(_translate("MainWindow", "File", None))
         self.actionNew.setText(_translate("MainWindow", "New", None))
         self.actionLoad.setText(_translate("MainWindow", "Load", None))

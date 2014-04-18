@@ -1,8 +1,9 @@
 __author__ = 'Marcin'
 
 import sys
-from PyQt4 import QtGui, QtCore
-from gui.gui import MainWindow
+
+from lcp.gui.gui import *
+from lcp.parser.grammar import *
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)

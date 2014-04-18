@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>462</height>
+    <height>483</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@ p, li { white-space: pre-wrap; }
       <x>330</x>
       <y>30</y>
       <width>451</width>
-      <height>351</height>
+      <height>381</height>
      </rect>
     </property>
    </widget>
@@ -70,9 +70,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="wordLineEdit">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>390</y>
-      <width>281</width>
+      <x>390</x>
+      <y>420</y>
+      <width>301</width>
       <height>20</height>
      </rect>
     </property>
@@ -80,7 +80,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="transformGrammarButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>170</x>
       <y>390</y>
       <width>141</width>
       <height>23</height>
@@ -93,9 +93,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="generateTableButton">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>390</y>
-      <width>151</width>
+      <x>10</x>
+      <y>420</y>
+      <width>301</width>
       <height>23</height>
      </rect>
     </property>
@@ -107,7 +107,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>710</x>
-      <y>390</y>
+      <y>420</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -119,14 +119,27 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="enterWordLabel">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>390</y>
+      <x>330</x>
+      <y>420</y>
       <width>61</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>Enter word:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="parseGrammarButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>390</y>
+      <width>141</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Parse grammar</string>
     </property>
    </widget>
   </widget>
